@@ -1,0 +1,10 @@
+#import uf.graphql
+#import municipio.graphql
+#import cartorio.graphql
+type Query @group(middleware: ["keycloak"]){
+    ufindAll: [Uf!]! @paginate(type: "paginator" model: "App\\Entity\\Uf")
+    uf(co_uf: Int @eq): Uf @find(model: "App\\Entity\\Uf")
+    municipio: [Municipio!]! @all
+    orderBy: [Uf!]! @field(resolver: "App\\Http\\GraphQL\\Queries\\Uf@resolve")
+    cartorio: [Cartorio]
+}

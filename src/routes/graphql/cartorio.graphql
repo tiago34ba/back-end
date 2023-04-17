@@ -1,0 +1,4 @@
+type Cartorio {
+    id_cartorio: Int!
+    no_cartorio_titular: String!
+}

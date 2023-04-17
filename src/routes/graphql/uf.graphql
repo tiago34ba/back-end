@@ -1,0 +1,7 @@
+type Uf {
+    co_uf: Int!
+    no_uf: String!
+    sg_uf: String!
+    co_regiao: Int!
+    municipios: [Municipio] @hasMany
+}

@@ -1,0 +1,9 @@
+type Municipio {
+    co_municipio: String!
+    co_municipio_12: String!
+    no_municipio: String!
+    in_capital: Int
+    co_microrregiao: Int
+    co_uf: Int!
+    sg_uf: String!
+}

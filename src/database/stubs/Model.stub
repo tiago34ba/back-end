@@ -1,0 +1,57 @@
+<?php
+
+namespace App\Entity;
+
+use Yajra\Oci8\Eloquent\OracleEloquent as Model;
+
+class {{modelName}} extends Model
+{
+  use InepEntity;
+
+  /**
+   * Sequence name variable.
+   *
+   * @var string
+   */
+  public $sequence = '{{schema}}.seq_{{modelNameSingularLowerCase}}';
+
+  /**
+   * The table associated with the model.
+   *
+   * @var string
+   */
+  protected $table = 'tb_{{modelNameSingularLowerCase}}';
+
+  /**
+   * The primary key for the model.
+   *
+   * @var string
+   */
+  protected $primaryKey = 'id_{{modelNameSingularLowerCase}}';
+
+  /**
+   * Indicates if the model should be timestamped.
+   *
+   * @var bool
+   */
+  public $timestamps = false;
+
+  /**
+   * The attributes that are mass assignable.
+   *
+   * @var array
+   */
+  protected $fillable = [];
+
+  /**
+   * The attributes that should be hidden for serialization.
+   *
+   * @var array
+   */
+  protected $hidden = [
+    'co_pessoa_operacao',
+    'dt_operacao',
+    'nu_ip_operacao',
+    'nu_operacao'
+  ];
+}
